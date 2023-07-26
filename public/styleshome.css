@@ -33,21 +33,17 @@
             background-color: #444;
         }
 
-        .content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 300px;
-            margin-top: 20px;
-        }
-
-        .content a.button {
-            padding: 12px 24px;
-            background-color:  #4CAF50;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        .content a.button:hover {
-            background-color: #45a049;
-            
-        }
+       
+       
+       .centered-text {
+        max-width: 300px;
+        max-height: 300px;
+        margin: 10% auto;
+        font-size: 36px;  
+        text-align: center;
+        padding: 20px;  
+        background-color: white; 
+        border-radius: 10px;  
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    }
+        

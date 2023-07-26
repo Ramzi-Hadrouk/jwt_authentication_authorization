@@ -11,12 +11,19 @@
 
 <body>
     <header>
+        <% if(user==null){%>
         <a href="/signup" class="button">Signup</a>
         <a href="/login" class="button">Login</a>
-        <a href="logout" class="button">Logout</a>
+        <%} else{%>
+        
+        <span>welcome  <%=user.email%>    </span>
+        <a href="/logout" class="button">Logout</a>
+        <%}%>
+
     </header>
+
     <div class="centered-container">
-        <p class="centered-text">This page for authenticated users</p>
+        <p class="centered-text"> Hi! welcome in the private Page , This page for authenticated users</p>
     </div>
 </body>
 

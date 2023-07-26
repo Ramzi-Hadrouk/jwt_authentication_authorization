@@ -55,7 +55,7 @@ module.exports.postSignup= async function(req,res){
 			const token=createToken(user._id);
 			res.cookie('jwt',token,{httpOnly:true,maxAge:3*24*60*60*1000});
 
-			res.render('privatepage');
+			res.redirect('/privatepage');
 
 
 		})
@@ -81,7 +81,7 @@ module.exports.postLogin= async function(req,res){
     	const user = await User.login(email,password);
     	const token=createToken(user._id);
 		res.cookie('jwt',token,{httpOnly:true,maxAge:3*24*60*60*1000});
-		res.render('privatepage');
+		res.redirect('/privatepage');
 
     }catch(error){
     	
