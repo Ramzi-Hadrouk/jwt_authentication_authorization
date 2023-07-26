@@ -3,10 +3,10 @@ const mongoose = require('mongoose');
 const router=require('./routes/authRoutes')
 const app = express() ;
 /*---Middelwares---*/
-app.use('/',router);
 app.set('view engine', 'ejs');
 app.use(express.static('public'))
-
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
 /*--- connect to database ---*/
 mongoose.connect('mongodb://localhost:27017/authDb')
 	.then( ()=> {
@@ -18,8 +18,12 @@ mongoose.connect('mongodb://localhost:27017/authDb')
 	})
 	.catch( error => console.log(error));
 
-/*--- http ---*/
+/*--- routes ---*/
 
 app.get('/',(req,res)=>{
-	res.send('hello me ')
-})
+	res.render('home')
+}) ;
+
+app.use(router);
+
+
